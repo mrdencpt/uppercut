@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool) # True or False ไม่ใช่ string
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['uppercuttest.herokuapp.com']
 
 
 # Application definition
