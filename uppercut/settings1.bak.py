@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from django.contrib.messages import constants as messages
 import os
-from decouple import config # สำหรับซ่อนโค้ดที่สำคัญ pip install python-decouple
+from decouple import config  # สำหรับซ่อนโค้ดที่สำคัญ pip install python-decouple
 import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool) # True or False ไม่ใช่ string
+DEBUG = config('DEBUG', default=True, cast=bool)  # True or False ไม่ใช่ string
 
 ALLOWED_HOSTS = ['uppercuttest.herokuapp.com']
 
@@ -44,7 +45,7 @@ INSTALLED_APPS = [
     'carts',
     'orders',
     'django.contrib.humanize',
-    'admin_honeypot', # ใช้เก็บข้อมูลคนแอบเข้า admin
+    'admin_honeypot',  # ใช้เก็บข้อมูลคนแอบเข้า admin
 ]
 
 MIDDLEWARE = [
@@ -155,31 +156,33 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'uppercut/static'),
+    os.path.join(BASE_DIR, 'uppercut/static'),
 ]
 # รวมรวม ไฟล์ค่าคงที่ ด้วยคำสั่ง
 # python manage.py collectstatic
 
-#Media setting
+# Media setting
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
-    messages.ERROR:'danger',
+    messages.ERROR: 'danger',
 }
 
 SITE_ID = 1
 
 # Email sending
-EMAIL_HOST=config('EMAIL_HOST') # จะได้ค่าเป็น String
-EMAIL_PORT=config('EMAIL_PORT', cast=int) # cast=int เพื่อเป็นตัวเลข ไม่ใช่ข้อความ
-EMAIL_HOST_USER=config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS=config('EMAIL_USE_TLS', cast=bool) #cast=bool แจ้งค่าเป็น boolean
+EMAIL_HOST = config('EMAIL_HOST')  # จะได้ค่าเป็น String
+# cast=int เพื่อเป็นตัวเลข ไม่ใช่ข้อความ
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+# cast=bool แจ้งค่าเป็น boolean
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
