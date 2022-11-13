@@ -100,15 +100,19 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 # หาจาก https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html
 # ซ่อนค่า config ที่ .env ไฟล์
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-    }
-}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#     }
+# }
+
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:123456@localhost/uppercut_db')}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
