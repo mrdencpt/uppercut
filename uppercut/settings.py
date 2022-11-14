@@ -191,3 +191,4 @@ EMAIL_USE_TLS=config('EMAIL_USE_TLS', cast=bool) #cast=bool แจ้งค่�
 
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DISABLE_COLLECTSTATIC=1
