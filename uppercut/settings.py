@@ -117,7 +117,8 @@ AUTH_USER_MODEL = 'accounts.Account'
 DB_NAME = config('DB_NAME')
 DB_USER = config('DB_USER')
 DB_PASS = config('DB_PASSWORD')
-DATABASES = {'default': dj_database_url.config(default='postgres://DB_USER:DB_PASS@localhost/DB_NAME')}
+DB_HOST = config('DB_HOST')
+DATABASES = {'default': dj_database_url.config(default='postgres://DB_USER:DB_PASS@DB_HOST/DB_NAME')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
