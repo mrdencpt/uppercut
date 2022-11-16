@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool) # True or False ไม่ใช่ string
 
 ALLOWED_HOSTS = ['uppercuttest.herokuapp.com']
-
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -100,7 +100,7 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 # หาจาก https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html
 # ซ่อนค่า config ที่ .env ไฟล์
-
+# Database Local
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -112,9 +112,9 @@ AUTH_USER_MODEL = 'accounts.Account'
 # }
 
 # DATABASES = {'default': dj_database_url.config(default='postgres://user:pass@localhost/dbname')}
-
 # DATABASES = {'default': dj_database_url.config(default='postgres://postgres:123456@localhost/uppercut_db')}
 
+# Database Heroku 
 DB_NAME = config('DB_NAME')
 DB_USER = config('DB_USER')
 DB_PASS = config('DB_PASSWORD')
