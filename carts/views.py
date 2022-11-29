@@ -15,6 +15,7 @@ def _cart_id(request):
     return cart
 
 # เลือกสินค้าเพิ่มเข้ามา , กดปุ่ม +
+@login_required(login_url='login')
 def add_cart(request, product_id):
     current_user = request.user
     product = Product.objects.get(id=product_id)  # เก็บ สินค้าไว้ที่ product
@@ -163,6 +164,7 @@ def remove_cart_item(request, product_id, cart_item_id):
     return redirect('cart')
 
 
+@login_required(login_url='login')
 def cart(request, total=0, quantity=0, cart_items=None):
     try:
         tax = 0

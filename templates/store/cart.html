@@ -9,10 +9,15 @@
     
     <!-- ============================ COMPONENT 1 ================================= -->
     {% if not cart_items %}
-        <h2 class="text-center">ตะกร้าสินค้าว่างเปล่า !</h2>
-        <br>
-        <div class="text-center">
-            <a href="{% url 'store' %}" class="btn btn-primary">เลือกสินค้าต่อ..</a>
+        <div class="empty" style="padding-top:80px; padding-bottom: 50px;">
+            <div class="text-center"style="padding-bottom: 20px;">
+                <i class="fa fa-shopping-cart fa-3x"></i>
+            </div>
+            <h2 class="text-center">รถเข็นว่างเปล่า !</h2>
+            <br>
+            <div class="text-center">
+                <a href="{% url 'store' %}" class="btn btn-secondary">เลือกซื้อสินค้าต่อ..</a>
+            </div>
         </div>
     {% else %}
         <div class="row">

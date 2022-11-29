@@ -111,11 +111,8 @@ git push heroku master ผลัก ขึ้น heroku
 heroku run python manage.py migrate
 heroku run python manage.py createsuperuser
 
-dumpข้อมูลขึ้นไป heroku ด้วย สร้าง folder dumps
-python manage.py dumpdata food > food/dumps/food.json
-สู่ขั้นตอน up heroku
-เรียก ข้อมูลจากไฟล์ food.json
-heroku run python manage.py loaddata food/dumps/food.json
+dumpข้อมูลขึ้นไป heroku ด้วย สร้าง folder dumps (accounts เป็น app ที่มี ตาราง Models อยู่ 
+python manage.py dumpdata accounts > dumps/accounts.json
 
----python manage.py dumpdata orders > orders/dumps/data.json
----heroku run python manage.py loaddata orders/dumps/data.json
+สู่ขั้นตอน up heroku หลังจาก heroku login แล้ว
+heroku run python manage.py loaddata dumps/accounts.json

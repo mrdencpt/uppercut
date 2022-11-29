@@ -16,7 +16,7 @@ from django.core.mail import EmailMessage
 from carts.views import _cart_id
 from carts.models import Cart, CartItem
 from orders.models import Order, OrderProduct
-
+import requests
 
 def register(request):
     if request.method == 'POST':
@@ -129,7 +129,8 @@ def login(request):
 def logout(request):
     auth.logout(request)
     messages.success(request, 'ออกจากระบบ สำเร็จ !')
-    return redirect('login')
+    # return redirect('login')
+    return redirect('home')
 
 
 def activate(request, uidb64, token):

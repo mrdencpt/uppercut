@@ -19,7 +19,7 @@
         <div class="col-lg col-sm col-md col-6 flex-grow-0">
             <div class="category-wrap dropdown d-inline-block float-right">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"> 
-                    <i class="fa fa-bars"></i> All category 
+                    <i class="fa fa-bars"></i> หมวดหมู่ 
                 </button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{% url 'store' %}"><b>สินค้าทั้งหมด</b></a>
@@ -29,7 +29,7 @@
                 </div>
             </div>  <!-- category-wrap.// -->
         </div> <!-- col.// -->
-        <a href="{% url 'store' %}" class="btn btn-outline-secondary">Store</a>
+        <a href="{% url 'store' %}" class="btn btn-outline-secondary">คลังสินค้า</a>
         <div class="col-lg  col-md-6 col-sm-12 col">
             <form action="{% url 'search' %}" class="search" method="GET">
                 <div class="input-group w-100">
@@ -50,7 +50,7 @@
                         <!-- <small class="title text-muted">Welcome guest!</small> -->
                         <div> 
                             <a href="{% url 'login' %}">เข้าสู่ระบบ</a> <span class="dark-transp"> | </span>
-                            <a href="{% url 'register' %}"> ลงทะเบียน</a>
+                            <a href="{% url 'register' %}">สมัครใหม่</a>
                         </div>
                     {% else %}
                         <!-- <small class="title text-muted">บัญชีคุณ: {{ user.first_name}}</small> -->
